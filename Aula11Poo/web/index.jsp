@@ -32,11 +32,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Índice - POO</title>
+        <title>Associação recursiva - POO</title>
     </head>
     <body>
         <h1>POO</h1>
-        <h2>Índice</h2>
+        <h2>Associação recursiva - árvore genealógica</h2>
         <table border="1">
             <tr>
                 <th>Nome</th>
