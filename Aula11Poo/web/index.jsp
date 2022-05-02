@@ -6,7 +6,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
 <%@page import="demo.Pessoa"%>
-<%
+<%  
     Pessoa ramiro = new Pessoa("Ramiro");
     Pessoa maria = new Pessoa("Maria");
     Pessoa albina = new Pessoa("Albina");
