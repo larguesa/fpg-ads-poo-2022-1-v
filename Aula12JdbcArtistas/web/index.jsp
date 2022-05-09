@@ -10,7 +10,9 @@
 <%
     Exception requestEx = null;
     ArrayList<Artist> list = new ArrayList<>();
+    int count = 0;
     try{
+        count = Artist.getCount();
         list = Artist.getList();
     }catch(Exception e){
         requestEx = e;
@@ -23,7 +25,7 @@
     </head>
     <body>
         <h1>JDBC</h1>
-        <h2>Lista de artistas</h2>
+        <h2>Lista de artistas (<%= count %> registros)</h2>
         <%if(requestEx!=null){%>
         <h3 style="color: red"><%= requestEx.getMessage() %></h3>
         <%}%>
