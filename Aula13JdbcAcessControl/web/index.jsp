@@ -18,11 +18,15 @@
         <h2>Início</h2>
         <h3>Usuários</h3>
         <table>
-            <tr><th>Username</th><th>Name</th></tr>
+            <tr><th>Username</th><th>Name</th><th>hash</th></tr>
             <%for(User u: User.getAllUsers()){%>
             <tr>
                 <td><%= u.getUsername() %></td>
                 <td><%= u.getName() %></td>
+                <td>
+                    <%= u.getPasswordHash() %> | 
+                    <%= (u.getUsername()+"1234").hashCode() %>
+                </td>
             </tr>
             <%}%>
         </table>
