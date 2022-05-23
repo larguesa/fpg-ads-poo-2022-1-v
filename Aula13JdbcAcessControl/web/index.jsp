@@ -7,6 +7,15 @@
 <%@page import="model.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    Exception indexException = null;
+    int usersCount = -1;
+    try{
+        usersCount = User.getAllUsers().size();
+    }catch(Exception ex){
+        indexException = ex;
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,19 +25,16 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf"%>
         <h2>Início</h2>
-        <h3>Usuários</h3>
-        <table>
-            <tr><th>Username</th><th>Name</th><th>hash</th></tr>
-            <%for(User u: User.getAllUsers()){%>
-            <tr>
-                <td><%= u.getUsername() %></td>
-                <td><%= u.getName() %></td>
-                <td>
-                    <%= u.getPasswordHash() %> | 
-                    <%= (u.getUsername()+"1234").hashCode() %>
-                </td>
-            </tr>
-            <%}%>
-        </table>
+        <%if(indexException != null){%>
+        <div style="color: red">
+            <%= indexException.getMessage() %>
+        </div><hr/>
+        <%}%>
+        <h3>
+            Uuários: 
+            <a href="users.jsp">
+                <%= (usersCount>-1) ? usersCount : '-' %>
+            </a>
+        </h3>
     </body>
 </html>
