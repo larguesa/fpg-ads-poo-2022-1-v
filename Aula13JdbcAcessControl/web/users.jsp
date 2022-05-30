@@ -68,6 +68,7 @@
                     <input type="submit" name="user-add" value="Adicionar"/>
                 </fieldset>
             </form>
+            <hr/>
             <table border="1">
                 <tr><th>Username</th><th>Name</th><th>Remover</th><th>Alterar</th></tr>
                 <%for(User u: users){%>
